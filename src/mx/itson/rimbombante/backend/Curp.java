@@ -131,12 +131,8 @@ public class Curp {
  */
     static char obtenerPrimerLetraNombrePila(String nombrePila) {
         return nombrePila.charAt(0);
-
-
-    if( nombrePila.equals("María")
-    )
-
     }
+    
 /**
 * Obtiene la primer letra consonante interna del primer apellido o del apellido paterno
 * param: obtenerPrimerConsonanteInternaPrimerApellido, primerApellido
