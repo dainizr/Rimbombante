@@ -5,14 +5,14 @@
 package mx.itson.rimbombante.backend;
 
 /**
- *
+ * Contiene métodos para la obtención de la clave CURP
  * @author lm
  */
 public class Curp {
 
     public static void main(String[] args) {
 
-        System.out.println(primerLetraYVocalInterna("meza")
+        System.out.println(obtenerPrimerLetraYVocalInterna("meza")
                 + primeraLetraSegundoApellido("acosta")
                 + primerLetraNombrePila("luis")
                 + obtenerFecha("06", "08", "2003")
@@ -22,7 +22,9 @@ public class Curp {
 
         System.out.println(primerLetra("Meza"));
     }
-
+/**
+*
+ */
     public String obtenerCurp(
             String nombres,
             String primerApellido,
@@ -37,7 +39,7 @@ public class Curp {
         primerApellido = limpiarPalabra(primerApellido);
         segundoApellido = limpiarPalabra(segundoApellido);
 
-        String curp = primerLetraYVocalInterna(nombres) + primeraLetraSegundoApellido(primerApellido);
+        String curp = obtenerPrimerLetraYVocalInterna(nombres) + obtenerPrimeraLetraSegundoApellido(primerApellido);
 
         return curp;
     }
@@ -51,7 +53,7 @@ public class Curp {
                 .replace('ú', 'u').toUpperCase();
     }
 
-    static char primerVocalInterna(String palabra) {
+    static char obtenerPrimerVocalInterna(String palabra) {
         String vocales = "AEIOU";
 
         for (int i = 1; 0 <= palabra.length(); i++) {
@@ -63,7 +65,7 @@ public class Curp {
         return ' ';
     }
 
-    static char primerConsonanteInterna(String palabra) {
+    static char obtenerPrimerConsonanteInterna(String palabra) {
         String vocales = "AEIOU";
 
         for (int i = 1; 0 <= palabra.length(); i++) {
@@ -75,29 +77,29 @@ public class Curp {
         return ' ';
     }
 
-    static String primerLetraYVocalInterna(String palabra) {
+    static String obtenerPrimerLetraYVocalInterna(String palabra) {
         char[] letras = {palabra.charAt(0), primerVocalInterna(palabra)};
 
         return new String(letras);
     }
 
-    static public char primerLetra(String apellidoPaterno) {
+    static public char obtenerPrimerLetra(String apellidoPaterno) {
         return apellidoPaterno.charAt(0);
     }
 
-    static char primeraLetraSegundoApellido(String segundoApellido) {
+    static char obtenerPrimeraLetraSegundoApellido(String segundoApellido) {
         return segundoApellido.charAt(0);
     }
 
-    static char primerLetraNombrePila(String nombrePila) {
+    static char obtenerPrimerLetraNombrePila(String nombrePila) {
         return nombrePila.charAt(0);
     }
 
-    static char primerConsonanteInternaPrimerApellido(String primerApellido) {
+    static char obtenerPrimerConsonanteInternaPrimerApellido(String primerApellido) {
         return primerConsonanteInterna(primerApellido);
     }
 
-    static char primerConsonanteInternaSegundoApellido(String segundoApellido) {
+    static char obtenerPrimerConsonanteInternaSegundoApellido(String segundoApellido) {
         return primerConsonanteInterna(segundoApellido);
     }
 
