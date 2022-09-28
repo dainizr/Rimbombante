@@ -12,8 +12,8 @@ public class Curp {
 
     /**
     * Obtiene la información para establecer los dígitos de la CURP.
-    * param obtenerPrimerLetraYVocalInterna, primeraLetraSegundoApellido, primerLetraNombrePila, obtenerFecha, obtenerCodigoEstado, primerConsonanteInternaSegundoApellido
-    * return Los datos de la primera vocal interna, primera letra del segundo apellido, primera letra del primer nombre, fecha de nacimiento, código de estado y la primer consonante interna del segundo apellido
+    * param:obtenerPrimerLetraYVocalInterna, primeraLetraSegundoApellido, primerLetraNombrePila, obtenerFecha, obtenerCodigoEstado, primerConsonanteInternaSegundoApellido
+    * return: Los datos de la primera vocal interna, primera letra del segundo apellido, primera letra del primer nombre, fecha de nacimiento, código de estado y la primer consonante interna del segundo apellido
  */
 
     public static void main(String[] args) {
@@ -52,8 +52,8 @@ public class Curp {
 
     /**
     * Limpia la palabra de espacios, reemplazando también los acentos de cada vocal haciendo que esta se convierta en mayúsculas.
-    * palabra 
-    * return la palabra sin espacios al inicio ni al final, removiendo los acentos 
+    * param: palabra 
+    * return: la palabra sin espacios al inicio ni al final, removiendo los acentos 
      */
 
     static String limpiarPalabra(String palabra) {
@@ -65,7 +65,9 @@ public class Curp {
                 .replace('ú', 'u').toUpperCase();
     }
 /**
-    intentas comentar este tu, porque si lo ando haciendo mal vali brg con este
+* Obtiene la primera vocal interna de la palabra, empezando por la primera posición de caracteres saltando posiciónes hasta llegar a la vocal
+* param: obtenerPrimerVocalInterna, palabra, vocales
+* return: el caracter que sea la primera vocal interna del nombre.
  */
     static char obtenerPrimerVocalInterna(String palabra) {
         String vocales = "AEIOU";
@@ -79,7 +81,9 @@ public class Curp {
         return ' ';
     }
 /**
-* este iwal jaja perdón
+* Obtiene el primer caracter consonante interno del nombre o la palabra ingresada
+* param: obtenerPrimerConsonanteInterna, palabra, vocales
+* return: el caracter de la palabra que sea la primer consonante interna del nombre o palabra ingresada.
  */
     static char obtenerPrimerConsonanteInterna(String palabra) {
         String vocales = "AEIOU";
